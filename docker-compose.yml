@@ -13,6 +13,7 @@ services:
 
   fast-api:
     build: /fastapi-app/
+    command: bash -c "alembic upgrade head && python main.py"
     restart: always
     depends_on:
       - pg
